@@ -21,3 +21,8 @@ body, html {
   background-size: cover;
 }
 
+.alienText{
+  position: absolute; 
+  margin-left: 20%;
+}
+
