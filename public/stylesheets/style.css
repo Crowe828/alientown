@@ -2,3 +2,22 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+body, html {
+  height: 100%;
+  width:100%
+}
+
+.ufoPic {
+  /* The image used */
+  background-image: url("../images/ufo.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
