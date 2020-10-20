@@ -26,3 +26,19 @@ body, html {
   margin-left: 20%;
 }
 
+@keyframes rotate {
+  from {
+    transform: rotateY(0deg);
+  }
+  to { 
+    transform: rotateY(360deg);
+  }
+}
+
+img.alienText {
+    animation-name:            rotate; 
+    animation-duration:        10s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
