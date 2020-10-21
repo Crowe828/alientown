@@ -36,7 +36,7 @@ $(document).ready(() => {
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
+    $("#alert .msg").text("Sorry, this email is already in use!");
     $("#alert").fadeIn(500);
   }
 });
