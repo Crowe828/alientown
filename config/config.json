@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "rootroot",
-    "database": "passport_demo",
+    "password": "Xgeuaot1!",
+    "database": "alien_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
