@@ -37,8 +37,8 @@ $(document).ready(() => {
     // Submits a new post and brings user to blog page upon completion
     function submitPost(post) {
         $.post("/api/posts", post, function () {
-            // window.location.href = "/sightings";
-            // location.reload();
+            window.location.href = "/sightings";
+            location.reload();
         });
     }
 });

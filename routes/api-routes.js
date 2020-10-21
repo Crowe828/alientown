@@ -54,6 +54,7 @@ module.exports = function (app) {
 
   // POST route for saving a new post
   app.post("/api/posts", function (req, res) {
+    console.log(req.body)
     db.Post.create({
       date: req.body.date,
       city: req.body.city,
@@ -61,7 +62,7 @@ module.exports = function (app) {
       duration: req.body.duration,
       summary: req.body.summary,
       datePosted: req.body.datePosted,
-      UserId: req.body.UserId
+      UserId: req.user.id
     })
       .then(function (dbPost) {
         res.json(dbPost);
@@ -69,4 +70,19 @@ module.exports = function (app) {
         console.log(err);
       });
   });
+
+  app.get("/api/user_data", (req, res) => {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
+  
 };
