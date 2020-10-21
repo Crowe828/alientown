@@ -31,16 +31,14 @@ $(document).ready(() => {
                 .val(),
             UserId: 1
         };
-        console.log(newPost)
         submitPost(newPost);
     });
 
     // Submits a new post and brings user to blog page upon completion
     function submitPost(post) {
-        console.log("hi");
         $.post("/api/posts", post, function () {
             // window.location.href = "/sightings";
-            location.reload();
+            // location.reload();
         });
     }
 });
