@@ -8,6 +8,12 @@ body, html {
   width:100%
 }
 
+.welcome{
+  font-size:40px;
+  color:whitesmoke;
+  padding-top: 75px;
+}
+
 .ufoPic {
   /* The image used */
   background-image: url("../images/ufo.jpg");
