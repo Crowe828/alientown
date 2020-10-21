@@ -1,20 +1,52 @@
 <div class="ufoPic" width=100% height=100%>
-    <p class="text-center welcome">Welcome <span class="member-name"></span></p>
+    <p class="text-center welcome">Welcome, <span class="member-name"></span></p>
     <div class="container tiles">
-            <div class="row">
-                <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-2">
+            </div>
+             
+            <div class="col-md-8">
+                {{!-- <div class="card w-75">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
 
-                    <div class="tile is-ancestor">
+                <div class="card w-50">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <a href="#" class="btn btn-primary">Button</a>
+                    </div>
+                </div>
+            </div>
+             --}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="tile is-ancestor tileGroup">
                         <div class="tile is-vertical is-8">
                             <div class="tile">
                                 <div class="tile is-parent is-vertical">
-                                    <article class="tile is-child notification is-primary">
+                                    <article class="tile is-child notification is-whitesmoke">
                                         <p class="title">Your Sightings</p>
                                         <a class="btn btn-light" href="/reports">reports</a>
                                     </article>
                                 </div>
-                                <div class="tile is-parent">
-                                    <article class="tile is-child notification is-info">
+                                <div class="tile is-parent tileTwo">
+                                    <article class="tile is-child notification is-whitesmoke">
                                         <p class="title">Sighting of the Week</p>
                                         <p class="subtitle"></p>
                                         <figure class="image is-4by3">
@@ -24,8 +56,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tile is-parent">
-                            <article class="tile is-child notification is-success">
+                        <div class="tile is-parent tileThree">
+                            <article class="tile is-child notification is-whitesmoke">
                                 <div class="content">
                                     <p class="title">View Sightings</p>
                                     <div class="content">
@@ -35,11 +67,11 @@
                             </article>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
+    </div>
     <div class="flier">
-        {{!-- <img src="images/aliens.png" class="alienText"> --}}
+        <img src="images/alientown.png" class="alienText">
         <img src="images/ufoSmall.png" class="ufoSmall">
     </div>
 </div>

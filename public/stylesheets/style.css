@@ -9,11 +9,15 @@ body, html {
 }
 
 .welcome{
-  font-size:40px;
+  font-size:45px;
   color:whitesmoke;
-  padding-top: 75px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  font-family: 'Space Mono', monospace;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-weight: bold;
 }
-
 .ufoPic {
   /* The image used */
   background-image: url("../images/ufo.jpg");
@@ -107,3 +111,11 @@ z-index: 999999;
   transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
 }
 }
+
+.tileGroup {
+  background: black;
+}
+
+/* .tileOne {
+  background-color: black;
+} */
