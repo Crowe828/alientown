@@ -3,12 +3,10 @@
 </div>
 </div>
 <div class="container">
-    <h2> Ready!</h2>
+    My sightings
     <ul class="list-group text-center">
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block status=1}}
-        {{/unless}}
+        {{#each dbPost}}
+        {{dbPost}}
         {{/each}}
     </ul>
 </div>
