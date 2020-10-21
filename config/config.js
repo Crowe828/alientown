@@ -1,11 +1,11 @@
-require('dotenv').config();
+require("dotenv").config();
 
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "rootroot",
-    "database": "aliens_db",
-    "host": "localhost",
+    "username": process.env.DB_USER,
+    "password": process.env.DB_PASS,
+    "database": "alien_db",
+    "host": process.env.DB_HOST,
     "dialect": "mysql"
   },
   "test": {
