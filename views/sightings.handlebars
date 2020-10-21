@@ -1,0 +1,14 @@
+<div class="container text-center mt-5 pt-5 mb-5">
+    <h1 class="glow">My UFO Sightings </h1>
+</div>
+</div>
+<div class="container">
+    <h2> Ready!</h2>
+    <ul class="list-group text-center">
+        {{#each burgers}}
+        {{#unless devoured}}
+        {{> burgers/burger-block status=1}}
+        {{/unless}}
+        {{/each}}
+    </ul>
+</div>
