@@ -10,7 +10,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id
+      id: req.user.id,
     });
   });
 
@@ -20,12 +20,12 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch(err => {
+      .catch((err) => {
         res.status(401).json(err);
       });
   });
@@ -46,8 +46,51 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id
+        id: req.user.id,
       });
     }
   });
+
+  // GET route for all of the info within the sightings table
+  app.get("/api/sightings", function(req, res) {
+    db.Post.findAll({})
+      .then(function(dbSightings) {
+        res.json(dbSightings);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  // POST route for saving a new post
+
+  app.post("/api/posts", function(req, res) {
+    db.Post.create({
+      date: req.body.date,
+      city: req.body.city,
+      shape: req.body.shape,
+      duration: req.body.duration,
+      summary: req.body.summary,
+      datePosted: req.body.datePosted,
+      UserId: req.user.id,
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
+  app.get("/api/posts", function(req, res) {
+    db.Post.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+  
 };
