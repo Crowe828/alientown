@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Post = sequelize.define("Post", {
+  const Post = sequelize.define("Post", {
     date: {
       type: DataTypes.STRING
     },
@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     datePosted: {
       type: DataTypes.STRING
-    },
+    }
   });
 
   Post.associate = function(models) {
