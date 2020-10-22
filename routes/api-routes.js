@@ -63,6 +63,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new post
+
   app.post("/api/posts", function(req, res) {
     db.Post.create({
       date: req.body.date,
@@ -71,7 +72,7 @@ module.exports = function(app) {
       duration: req.body.duration,
       summary: req.body.summary,
       datePosted: req.body.datePosted,
-      UserId: req.body.UserId,
+      UserId: req.user.id,
     })
       .then(function(dbPost) {
         res.json(dbPost);
@@ -80,4 +81,16 @@ module.exports = function(app) {
         console.log(err);
       });
   });
+
+  app.get("/api/posts", function(req, res) {
+    db.Post.findAll({
+      where: {
+        UserId: req.user.id
+      }
+    })
+      .then(function(dbPost) {
+        res.json(dbPost);
+      });
+  });
+  
 };
