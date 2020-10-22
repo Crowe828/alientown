@@ -5,7 +5,7 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -24,28 +24,25 @@ module.exports = function (app) {
 
   app.get("/reports", (req, res) => {
     res.render("report");
-
   });
 
-
-  app.get("/sightings", (req, res) => {
+  app.get("/mySightings", (req, res) => {
     // If the user already has an account
     if (req.user) {
       db.Post.findAll({
         where: {
           UserId: req.user.id
         }
-      })
-        .then(function(results) {
-          var myResults = []
-          for (let i = 0; i < results.length; i++) {
-            myResults.push(results[i].dataValues)
-          }
-          console.log(myResults)
-          res.render("mySightings", { myResults: myResults });
-        });
+      }).then(results => {
+        const myResults = [];
+        for (let i = 0; i < results.length; i++) {
+          myResults.push(results[i].dataValues);
+        }
+        console.log(myResults);
+        res.render("mySightings", { myResults: myResults });
+      });
     }
-    console.log("youre not logged in")
+    console.log("youre not logged in");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
