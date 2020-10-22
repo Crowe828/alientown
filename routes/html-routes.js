@@ -1,5 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
+const db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -8,24 +9,39 @@ module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("members");
-    }
-    res.render("signup");
-  });
-
-  app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
-    if (req.user) {
-      res.render("members");
+      res.render("index");
     }
     res.render("login");
   });
 
-  app.get("/reports", (req, res) => {
+  app.get("/signup", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.render("report");
+      res.render("index");
     }
+    res.render("signup");
+  });
+
+  app.get("/reports", (req, res) => {
+      res.render("report");
+
+  });
+
+
+  app.get("/sightings", (req, res) => {
+    // If the user already has an account
+    if (req.user) {
+      db.Post.findAll({
+        where: {
+          UserId: req.user.id
+        }
+      })
+        .then(function(dbPost) {
+          console.log(dbPost)
+          res.render("sightings", dbPost);
+        });
+    }
+    console.log("youre not logged in")
   });
 
   // Here we've add our isAuthenticated middleware to this route.

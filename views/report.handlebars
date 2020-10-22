@@ -6,37 +6,36 @@
 </nav>
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <form id="newUfo">
-                        <div class="form-group">
-                            <label for="date">Date of Occurence:</label>
-                            <input placeholder="Date" class="form-control" id="date">
-                            <br />
-                            <label for="city">City:</label>
-                            <input placeholder="City" class="form-control" id="city">
-                            <br />
-                            <label for="shape">Shape:</label>
-                            <input placeholder="Shape" class="form-control" id="shape">
-                            <br />
-                            <label for="duration">Duration:</label>
-                            <input placeholder="Duration" class="form-control" id="duration">
-                            <br />
-                            <label for="summary">Summary:</label>
-                            <textarea placeholder="Summary" class="form-control" rows="5" id="summary"></textarea>
-                            <br />
-                            <label for="datePosted">Date Posted:</label>
-                            <input placeholder="Date Posted" class="form-control" id="datePosted">
-                            <br />
-                            <button type="submit" class="btn btn-primary submit">Submit</button>
-                        </div>
-                    </form>
+        <div class="col-md-4">
+        </div>
+        <div class="col-md-4">
+            <form id="newUfo">
+                <div class="form-group">
+                    <label for="date">Date of Occurence:</label>
+                    <input placeholder="Date" class="form-control" id="date">
+                    <br />
+                    <label for="city">City:</label>
+                    <input placeholder="City" class="form-control" id="city">
+                    <br />
+                    <label for="shape">Shape:</label>
+                    <select id="shape" name="shape">
+                        <option value="circle">Circle</option>
+                        <option value="fireball">Fireball</option>
+                        <option value="light">Light</option>
+                    </select>
+                    <br />
+                    <label for="duration">Duration:</label>
+                    <input placeholder="Duration" class="form-control" id="duration">
+                    <br />
+                    <label for="summary">Summary:</label>
+                    <textarea placeholder="Summary" class="form-control" rows="5" id="summary"></textarea>
+                    <br />
+                    <label for="datePosted">Date Posted:</label>
+                    <input placeholder="Date Posted" class="form-control" id="datePosted">
+                    <br />
+                    <button type="submit" class="btn btn-primary submit" id="report">Submit</button>
                 </div>
-            </div>
-
+            </form>
         </div>
     </div>
-
-
 </div>

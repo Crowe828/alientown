@@ -1,4 +1,6 @@
-{
+require("dotenv").config();
+
+module.exports = {
   "development": {
     "username": "root",
     "password": "Ripremus23",
@@ -17,4 +19,4 @@
     "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
   }
-}
+};
