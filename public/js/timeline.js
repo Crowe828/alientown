@@ -1,75 +1,29 @@
-var express = require("express");
 
-// var router = express.Router();
+// DOM element where the Timeline will be attached
+var container = document.getElementById("timeline");
 
+// Create a DataSet (allows two way data-binding)
+const items = new vis.Dataset();
 
-var timeline = require("");
+//Populate the DataSet with query
+connection.query("SELECT ? FROM ?", function(err, results) {
+    if (err) throw err;
 
+    items.clear();
 
-// //Get function for acquiring data from the db
-// router.get("/", function(req, res) {
-//     sightings.all(function(data) {
-//       var hbsObject = {
-//           sightings: data
-//       };
-//       res.render("index", hbsObject);
-//     });
-//   });
+    for (var i=0; i < results.length; i++) {
 
-// router.post("/api/sightings", function(req, res) {
-//     sighting.create([
-//       "id", "date_and_time", "city", "state", "shape", "duration", "summary", "posted"
-//     ], [
-//       req.body.id, req.body.date_and_time, req.body.city, req.body.state, req.body.shape, req.body.duration, req.body.summary, req.body.posted
-//     ], function(result) {
-  
-//       res.json({ id: result.insertId });
-//     });
-//   });
-  
-  // router.put("/api/sightings/:id", function(req, res) {
-  //   var condition = "id = " + req.params.id;
-  
+    items.add = ([
+      { id=results[i].id, content=results[i].city_name, start=results[i].date_and_time}
+    ])
+  }
+});
 
-  //   router.delete("/api/sightings/:id", function(req, res) {
-  //       var condition = "id = " + req.params.id;
-      
-  //       sighting.delete(condition, function(result) {
-  //         if (result.affectedRows == 0) {
-      
-  //           return res.status(404).end();
-  //         } else {
-  //           res.status(200).end();
-  //         }
-  //       });
-  //     });
-  //   })
+// Configuration for the Timeline
+const options = {};
+
+// Create a Timeline
+var timeline = new vis.Timeline(container, items, options);
 
 
-
-    var container = document.getElementById("timeline");
-
-
-
-    var items = new vis.DataSet([
-
-      connection.query("SELECT ? FROM ?", function(err, results) {
-        if (err) throw err;
-      
-        var itemArray = [];
-
-        for (var i=0; i < results.length; i++) {
-        itemArray.push(results[i].id) }
-        return itemArray
-        
-
-        .then(
-
-          ForEach (
-      { id: results.id, content: results.city_name, start: results.date_and_time},
-          )    
-    ]);
-
-    var options = {};
-    var timeline = new vis.Timeline(container, items, options);
-    module.exports = timeline;
+module.exports = timeline;
