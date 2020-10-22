@@ -10,7 +10,7 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id,
+      id: req.user.id
     });
   });
 
@@ -20,12 +20,12 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password,
+      password: req.body.password
     })
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch((err) => {
+      .catch(err => {
         res.status(401).json(err);
       });
   });
@@ -46,13 +46,13 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id,
+        id: req.user.id
       });
     }
   });
 
   // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
+  app.post("/api/posts", (req, res) => {
     db.Post.create({
       date: req.body.date,
       city: req.body.city,
@@ -61,42 +61,60 @@ module.exports = function(app) {
       duration: req.body.duration,
       summary: req.body.summary,
       datePosted: req.body.datePosted,
-      UserId: req.user.id,
+      UserId: req.user.id
     })
-      .then(function(dbPost) {
+      .then(dbPost => {
         res.json(dbPost);
       })
-      .catch((err) => {
+      .catch(err => {
         console.log(err);
       });
   });
 
-  app.get("/api/posts", function(req, res) {
+  app.get("/api/posts", (req, res) => {
     db.Post.findAll({
       where: {
-        UserId: req.user.id,
-      },
-    }).then(function(dbPost) {
+        UserId: req.user.id
+      }
+    }).then(dbPost => {
       res.json(dbPost);
     });
   });
 
   // GET route for all of the info within the sightings table
-  app.get("/api/all", function(req, res) {
-    db.Post.findAll({}).then(function(dbPost) {
-      console.log(dbPost);
+  app.get("/api/all", (req, res) => {
+    db.Post.findAll({}).then(dbPost => {
       res.json(dbPost);
     });
   });
 
-  app.delete("/api/posts/:id", function(req, res) {
+  app.delete("/api/posts/:id", (req, res) => {
     db.Post.destroy({
       where: {
         id: req.params.id
       }
-    }).then(function(dbPost) {
+    }).then(dbPost => {
       res.json(dbPost);
     });
   });
 
+  app.get("/api/posts/:id", (req, res) => {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
+
+  app.put("/api/posts", (req, res) => {
+    db.Post.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
 };
