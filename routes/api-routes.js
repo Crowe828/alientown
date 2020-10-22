@@ -51,17 +51,6 @@ module.exports = function(app) {
     }
   });
 
-  // GET route for all of the info within the sightings table
-  app.get("/api/sightings", function(req, res) {
-    db.Post.findAll({})
-      .then(function(dbSightings) {
-        res.json(dbSightings);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
-
   // POST route for saving a new post
   app.post("/api/posts", function(req, res) {
     db.Post.create({
@@ -85,12 +74,19 @@ module.exports = function(app) {
   app.get("/api/posts", function(req, res) {
     db.Post.findAll({
       where: {
-        UserId: req.user.id
-      }
-    })
-      .then(function(dbPost) {
-        res.json(dbPost);
-      });
+        UserId: req.user.id,
+      },
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // GET route for all of the info within the sightings table
+  app.get("/api/all", function(req, res) {
+    db.Post.findAll({}).then(function(dbPost) {
+      console.log(dbPost);
+      res.json(dbPost);
+    });
   });
 
   app.delete("/api/posts/:id", function(req, res) {
@@ -103,5 +99,4 @@ module.exports = function(app) {
     });
   });
 
-  
 };
