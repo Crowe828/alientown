@@ -38,8 +38,12 @@ module.exports = function(app) {
       })
         .then(function(results) {
           
-          console.log(results)
-          res.render("mySightings", results);
+          var myResults = []
+          for (let i = 0; i < results.length; i++) {
+            myResults.push(results[i].dataValues)
+          }
+          console.log(myResults)
+          res.render("mySightings", {myResults: myResults});
         });
     }
     console.log("youre not logged in")
