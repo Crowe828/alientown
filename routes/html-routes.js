@@ -36,9 +36,10 @@ module.exports = function(app) {
           UserId: req.user.id
         }
       })
-        .then(function(dbPost) {
-          console.log(dbPost)
-          res.render("sightings", dbPost);
+        .then(function(results) {
+          
+          console.log(results)
+          res.render("mySightings", results);
         });
     }
     console.log("youre not logged in")

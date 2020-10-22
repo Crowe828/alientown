@@ -1,12 +1,12 @@
 <div class="container text-center mt-5 pt-5 mb-5">
-    <h1 class="glow">My UFO Sightings </h1>
+    <h1>My UFO Sightings </h1>
 </div>
 </div>
 <div class="container">
     My sightings
     <ul class="list-group text-center">
-        {{#each dbPost}}
-        {{dbPost}}
+     {{#each result}}
+        {{> sighting}}
         {{/each}}
     </ul>
 </div>
