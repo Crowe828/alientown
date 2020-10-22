@@ -67,6 +67,7 @@ module.exports = function(app) {
     db.Post.create({
       date: req.body.date,
       city: req.body.city,
+      state: req.body.state,
       shape: req.body.shape,
       duration: req.body.duration,
       summary: req.body.summary,
@@ -91,5 +92,16 @@ module.exports = function(app) {
         res.json(dbPost);
       });
   });
+
+  app.delete("/api/posts/:id", function(req, res) {
+    db.Post.destroy({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
   
 };

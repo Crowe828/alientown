@@ -9,6 +9,11 @@ module.exports = function(sequelize, DataTypes) {
         allowNull: false,
         len: [1]
       },
+      state: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        len: [1]
+      },
       shape: {
         type: DataTypes.STRING,
         allowNull: false,

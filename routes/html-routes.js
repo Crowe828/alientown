@@ -5,7 +5,7 @@ const db = require("../models");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function(app) {
+module.exports = function (app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -23,7 +23,7 @@ module.exports = function(app) {
   });
 
   app.get("/reports", (req, res) => {
-      res.render("report");
+    res.render("report");
 
   });
 
@@ -37,13 +37,12 @@ module.exports = function(app) {
         }
       })
         .then(function(results) {
-          
           var myResults = []
           for (let i = 0; i < results.length; i++) {
             myResults.push(results[i].dataValues)
           }
           console.log(myResults)
-          res.render("mySightings", {myResults: myResults});
+          res.render("mySightings", { myResults: myResults });
         });
     }
     console.log("youre not logged in")
