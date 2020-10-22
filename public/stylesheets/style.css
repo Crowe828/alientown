@@ -24,16 +24,16 @@ html {
   background-image: url("../images/ufo.jpg");
 
   /* Full height */
-  height: 100%;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
 .alienText {
-  position: absolute;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
   margin-left: 20%;
 }
 
@@ -124,7 +124,8 @@ img.alienText {
   width: 500px;
   height: 300px;
   margin-top: 60px;
-  margin-left: 350px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 75px;
 }
 /* Set the size of the div element that contains the map */
@@ -164,12 +165,16 @@ img.alienText {
   color: darkslategrey;
 }
 
+.row{
+  margin-right: auto;
+  margin-left: auto;
+}
 
-.tileGroup {
+/* .tileGroup {
   margin-left: 500px;
   margin-right: 500px;
   
-}
+} */
 
 .title {
   font-family: Arial, Helvetica, sans-serif;

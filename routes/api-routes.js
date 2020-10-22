@@ -84,7 +84,6 @@ module.exports = function(app) {
   // GET route for all of the info within the sightings table
   app.get("/api/all", (req, res) => {
     db.Post.findAll({}).then(dbPost => {
-      console.log(dbPost);
       res.json(dbPost);
     });
   });
@@ -93,6 +92,26 @@ module.exports = function(app) {
     db.Post.destroy({
       where: {
         id: req.params.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
+
+  app.get("/api/posts/:id", (req, res) => {
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(dbPost => {
+      res.json(dbPost);
+    });
+  });
+
+  app.put("/api/posts", (req, res) => {
+    db.Post.update(req.body, {
+      where: {
+        id: req.body.id
       }
     }).then(dbPost => {
       res.json(dbPost);
