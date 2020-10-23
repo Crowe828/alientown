@@ -59,6 +59,10 @@ img.alienText {
   animation-timing-function: linear;
 }
 
+.alienImg {
+margin-left: 1020px;
+}
+
 .flier {
   pointer-events: none;
 }
@@ -129,7 +133,7 @@ img.alienText {
   border-width: 1px;
   width: 900px;
   height: 500px;
-  margin-top: 60px;
+  margin-top: 80px;
   margin-left: 350px;
   margin-bottom: 75px;
 }
@@ -177,6 +181,24 @@ img.alienText {
 
 .tile {
   border-radius: 15px;
+  align-items: center;
+}
+
+.tileOne {
+    box-shadow: 4px 3px 20px black;
+    margin-right: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tileTwo {
+  box-shadow: 4px 3px 20px black;
+  margin-right: 20px;
+}
+
+.tileThree {
+  box-shadow: 4px 3px 20px black;
+  margin-right: 20px;
 }
 
 .title {
@@ -194,6 +216,20 @@ img.alienText {
     margin-left: -700px; /* half of you width */
     background-color: whitesmoke;
     border-radius: 15px;
+    box-shadow: 4px 3px 20px black;
+}
+
+.reportContainer {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 900px;
+  margin-top: -450px; /* half of you height */
+  width: 500px;
+  margin-left: -250px; /* half of you width */
+  background-color: whitesmoke;
+  border-radius: 15px;
+  box-shadow: 4px 3px 20px black;
 }
 
 .sightings {
@@ -223,9 +259,26 @@ img.alienText {
 }
 
 .btn {
-  margin-left: 25px;
-  margin-top: 30px;
   background-color: whitesmoke;
+  /* margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); */
+}
+
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: whitesmoke;
+  text-align: center;
+  height: 80px;
+  padding-top: 25px;
+  background-color: darkgrey;
+  /* background: rgb(2,0,36);
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,27,157,1) 48%, rgba(0,0,0,1) 100%); */
 }
 
 
