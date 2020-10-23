@@ -18,14 +18,26 @@
   </div>
 </nav>
 <div class="container text-center mt-5 pt-5 mb-5">
-    <h1>My UFO Sightings </h1>
+    <h1>All UFO Sightings </h1>
 </div>
+<div class="dropdown">
+    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <input class="form-control" id="myInput" type="text" placeholder="Search..">
+      <li><a href="#">HTML</a></li>
+      <li><a href="#">CSS</a></li>
+      <li><a href="#">JavaScript</a></li>
+      <li><a href="#">jQuery</a></li>
+      <li><a href="#">Bootstrap</a></li>
+      <li><a href="#">Angular</a></li>
+    </ul>
+  </div>
 </div>
 <div class="container">
-    My sightings
     <ul class="list-group text-center">
      {{#each myResults}}
-        {{> sighting}}
+        {{> allSights}}
     {{/each}}
     </ul>
 </div>
