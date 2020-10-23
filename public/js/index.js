@@ -2,7 +2,16 @@
 function getData() {
   $.get("/api/all/", data => {
     if (data) {
+      // Check to make sure it pulled correctly
       console.log(data);
+      // Empty array to hold all of the city names
+      const cities = [];
+      for (let i = 0; i < data.length; i++) {
+        // Push every city from every sighting into the array
+        cities.push(data[i].city);
+      }
+      // Log it to make sure it pushed to the array correctly
+      console.log(cities);
     }
   });
 }
