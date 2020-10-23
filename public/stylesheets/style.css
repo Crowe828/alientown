@@ -11,13 +11,19 @@ html {
 
 .welcome{
   font-size:45px;
-  color:whitesmoke;
+  color: whitesmoke;
+  text-shadow: 2px 2px 4px black;
+  /* color:whitesmoke; */
   padding-top: 250px;
   padding-bottom: 60px;
-  font-family: 'Space Mono', monospace;
-  -webkit-text-stroke-width: 2px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
   font-weight: bold;
+  /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate; */
+  text-shadow: 100px, 100px, red;
 }
 .ufoPic {
   /* The image used */
@@ -121,15 +127,15 @@ img.alienText {
   box-shadow: 0 0 8px 2px;
   border-style: solid;
   border-width: 1px;
-  width: 500px;
-  height: 300px;
+  width: 900px;
+  height: 500px;
   margin-top: 60px;
   margin-left: 350px;
   margin-bottom: 75px;
 }
 /* Set the size of the div element that contains the map */
 #map {
-  height: 300px;
+  height: 500px;
   width: auto;
 }
 /* Panel that displays all of the info about local tattoo shops */
@@ -164,11 +170,13 @@ img.alienText {
   color: darkslategrey;
 }
 
-
 .tileGroup {
   margin-left: 500px;
   margin-right: 500px;
-  
+}
+
+.tile {
+  border-radius: 15px;
 }
 
 .title {
@@ -176,6 +184,51 @@ img.alienText {
   font-size: 25px;
   text-align: center;
 }
+.sightingsContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 900px;
+    margin-top: -400px; /* half of you height */
+    width: 1400px;
+    margin-left: -700px; /* half of you width */
+    background-color: whitesmoke;
+    border-radius: 15px;
+}
+
+.sightings {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 5em;
+  letter-spacing: -2px;
+  /* border-bottom: 2px solid black; */
+  text-transform: uppercase;
+  color: whitesmoke;
+  margin-top: 40px;
+  -webkit-text-stroke: black;
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0092e6, 0 0 40px #0092e6, 0 0 50px #0092e6, 0 0 60px #0092e6, 0 0 70px #0092e6;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #1eadff, 0 0 40px #1eadff, 0 0 50px #1eadff, 0 0 60px #1eadff, 0 0 70px #1eadff, 0 0 80px #1eadff;
+  }
+}
+
+.btn {
+  margin-left: 25px;
+  margin-top: 30px;
+  background-color: whitesmoke;
+}
+
+
 
 /* .center {
   background-color: black;
@@ -183,4 +236,12 @@ img.alienText {
 /* 
 .asdf {
   background-color: black;
+} */
+
+/* .sightings {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 50px;
+  text-align: left;
+  padding-top: 100px;
+  color: white;
 } */
