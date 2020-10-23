@@ -60,6 +60,23 @@ module.exports = function(app) {
     }
     console.log("youre not logged in");
   });
+
+  app.get("/all/:shape", (req, res) => {
+    // If the user already has an account
+    db.Post.findAll({
+      where: {
+        shape: req.params.shape
+      }
+    }).then(results => {
+      const myResults = [];
+      for (let i = 0; i < results.length; i++) {
+        myResults.push(results[i].dataValues);
+      }
+      console.log(myResults);
+      res.render("allSights", { myResults: myResults });
+    });
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {

@@ -1,15 +1,16 @@
 $(document).ready(() => {
-  $("#myInput").on("keyup", function() {
-    const value = $(this)
-      .val()
-      .toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle(
-        $(this)
-          .text()
-          .toLowerCase()
-          .indexOf(value) > -1
-      );
+  function getPosts(shape) {
+    console.log(shape);
+    $.ajax({
+      method: "GET",
+      url: "all/" + shape
+    }).then(() => {
+      window.location.href = "/all/" + shape;
     });
+  }
+
+  $("#searchAll").on("submit", () => {
+    const shape = $("#shapeChoice").val();
+    getPosts(shape);
   });
 });

@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">Alien Town</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -18,26 +19,25 @@
   </div>
 </nav>
 <div class="container text-center mt-5 pt-5 mb-5">
-    <h1>All UFO Sightings </h1>
+  <h1>All UFO Sightings </h1>
 </div>
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <input class="form-control" id="myInput" type="text" placeholder="Search..">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-      <li><a href="#">jQuery</a></li>
-      <li><a href="#">Bootstrap</a></li>
-      <li><a href="#">Angular</a></li>
-    </ul>
-  </div>
+<form id="searchAll">
+<div class="form-group">
+  <label for="shapeChoice">Shape: </label>
+  <select id="shapeChoice" name="shapeChoice">
+    <option selected value="">All Shapes</option>
+    <option value="circle">Circle</option>
+    <option value="fireball">Fireball</option>
+    <option value="light">Light</option>
+  </select>
+  <button type="submit" class="btn btn-sm btn-primary submit" id="report">Filter</button>
+</div>
+</form>
 </div>
 <div class="container">
-    <ul class="list-group text-center">
-     {{#each myResults}}
-        {{> allSights}}
+  <ul class="list-group text-center">
+    {{#each myResults}}
+    {{> allSights}}
     {{/each}}
-    </ul>
+  </ul>
 </div>
