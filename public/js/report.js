@@ -40,7 +40,7 @@ $(document).ready(() => {
   // Submits a new post and brings user to blog page upon completion
   function submitPost(post) {
     $.post("/api/posts", post, () => {
-      window.location.href = "/sightings";
+      window.location.href = "/mySightings";
     });
   }
 
@@ -57,7 +57,7 @@ $(document).ready(() => {
       method: "DELETE",
       url: "/api/posts/" + id
     }).then(() => {
-      window.location.href = "/sightings";
+      window.location.href = "/mySightings";
     });
   }
   $(".edit-sighting").on("click", function(event) {
