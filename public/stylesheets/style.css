@@ -121,8 +121,8 @@ img.alienText {
   box-shadow: 0 0 8px 2px;
   border-style: solid;
   border-width: 1px;
-  width: 500px;
-  height: 300px;
+  height:700px;
+  width: 1000px;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
@@ -130,11 +130,11 @@ img.alienText {
 }
 /* Set the size of the div element that contains the map */
 #map {
-  height: 300px;
-  width: auto;
+  height:700px;
+  width: 1000px;
 }
 /* Panel that displays all of the info about local tattoo shops */
-#panel {
+/* #panel {
   height: 300px;
   width: null;
   color: red;
@@ -144,13 +144,13 @@ img.alienText {
   overflow-x: hidden;
   transition: all 0.2s ease-out;
   font-size: smaller;
-}
+} */
 /* Only when the panel is open */
-.open {
+/* .open {
   width: 250px;
-}
+} */
 /* Styling for place details */
-.hero {
+/* .hero {
   width: 100%;
   height: auto;
   max-height: 166px;
@@ -163,7 +163,7 @@ img.alienText {
 }
 .details {
   color: darkslategrey;
-}
+} */
 
 .row{
   margin-right: auto;
