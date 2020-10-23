@@ -1,3 +1,16 @@
+// Pull all of the info from the database
+function getData() {
+  $.get("/api/all/", data => {
+    if (data) {
+      console.log(data);
+    }
+  });
+}
+
+// Call the function
+getData();
+
+// Google Maps variables
 let pos;
 let map;
 let bounds;
@@ -6,6 +19,7 @@ let currentInfoWindow;
 let service;
 let infoPane;
 
+// If the user submits their current location
 function initMap() {
   // Initializing variables
   bounds = new google.maps.LatLngBounds();

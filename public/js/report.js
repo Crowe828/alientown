@@ -40,7 +40,7 @@ $(document).ready(() => {
   // Submits a new post and brings user to blog page upon completion
   function submitPost(post) {
     $.post("/api/posts", post, () => {
-      window.location.href = "/sightings";
+      window.location.href = "/mySightings";
     });
   }
 
@@ -57,7 +57,7 @@ $(document).ready(() => {
       method: "DELETE",
       url: "/api/posts/" + id
     }).then(() => {
-      window.location.href = "/sightings";
+      window.location.href = "/mySightings";
     });
   }
   $(".edit-sighting").on("click", function(event) {
@@ -76,6 +76,7 @@ $(document).ready(() => {
         cityInput.val(data.city);
         stateInput.val(data.state);
         shapeInput.val(data.shape);
+        durationInput.val(data.duration);
         summaryInput.val(data.summary);
         datePosted.val(data.datePosted);
         updating = true;
