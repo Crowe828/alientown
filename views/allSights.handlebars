@@ -21,7 +21,7 @@
 <div class="container text-center mt-5 pt-5 mb-5">
   <h1>All UFO Sightings </h1>
 </div>
-<form id="searchAll">
+<form id="searchAll" action="/all">
 <div class="form-group">
   <label for="shapeChoice">Shape: </label>
   <select id="shapeChoice" name="shapeChoice">
@@ -30,7 +30,17 @@
     <option value="fireball">Fireball</option>
     <option value="light">Light</option>
   </select>
-  <button type="submit" class="btn btn-sm btn-primary submit" id="report">Filter</button>
+  <label for="timeFrame">Time Frame: </label>
+  <select id="timeFrame" name="timeFrame">
+    <option selected value="">All Years</option>
+    <option value="2020">2020</option>
+    <option value="2019">2019</option>
+    <option value="2018">2018</option>
+    <option value="2017">2017</option>
+    <option value="2016">2016</option>
+    <option value="2015">2015</option>
+  </select>
+  <button type="submit" class="btn btn-sm btn-primary submitFilter" id="report">Filter</button>
 </div>
 </form>
 </div>

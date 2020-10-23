@@ -1,16 +1,15 @@
 $(document).ready(() => {
-  function getPosts(shape) {
-    console.log(shape);
-    $.ajax({
-      method: "GET",
-      url: "all/" + shape
-    }).then(() => {
-      window.location.href = "/all/" + shape;
+  function getPosts(shape, time) {
+    $.get("all/" + shape + "/" + time, (data, status) => {
+      console.log(status);
+      window.location.href = "/all/" + shape + "/" + time;
     });
   }
 
-  $("#searchAll").on("submit", () => {
+  $(".submitFilter").on("click", (event) => {
+    event.preventDefault(event);
     const shape = $("#shapeChoice").val();
-    getPosts(shape);
+    const time = $("#timeFrame").val();
+    getPosts(shape, time);
   });
 });
