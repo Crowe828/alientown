@@ -1,6 +1,6 @@
 // Pull all of the info from the database
 function getData() {
-  $.get("/api/all/", data => {
+  app.get("/api/all/", data => {
     if (data) {
       console.log(data);
     }
