@@ -2,6 +2,7 @@
 // eslint-disable-next-line no-unused-vars
 const path = require("path");
 const db = require("../models");
+const { Op } = require("sequelize");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -60,6 +61,23 @@ module.exports = function(app) {
     }
     console.log("youre not logged in");
   });
+
+  app.get("/all/:shape/:time", (req, res) => {
+    db.Post.findAll({
+      where: {
+        shape: req.params.shape,
+        date: { [Op.endsWith]: req.params.time }
+      }
+    }).then(results => {
+      const myResults = [];
+      for (let i = 0; i < results.length; i++) {
+        myResults.push(results[i].dataValues);
+      }
+      // console.log(myResults);
+      res.render("allSights", { myResults: myResults });
+    });
+  });
+
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/members", isAuthenticated, (req, res) => {

@@ -1,15 +1,15 @@
 $(document).ready(() => {
-  $("#myInput").on("keyup", function() {
-    const value = $(this)
-      .val()
-      .toLowerCase();
-    $(".dropdown-menu li").filter(function() {
-      $(this).toggle(
-        $(this)
-          .text()
-          .toLowerCase()
-          .indexOf(value) > -1
-      );
+  function getPosts(shape, time) {
+    $.get("all/" + shape + "/" + time, (data, status) => {
+      console.log(status);
+      window.location.href = "/all/" + shape + "/" + time;
     });
+  }
+
+  $(".submitFilter").on("click", (event) => {
+    event.preventDefault(event);
+    const shape = $("#shapeChoice").val();
+    const time = $("#timeFrame").val();
+    getPosts(shape, time);
   });
 });
