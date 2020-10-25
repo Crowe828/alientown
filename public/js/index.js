@@ -74,8 +74,6 @@ function getData() {
         // Push every city from every sighting into the array
         cities.push(data[i].city);
       }
-      // Log it to make sure it pushed to the array correctly
-      console.log(cities);
 
       // Loop over all cities and get lat/lon
       for (i = 0; i < cities.length; i++) {
