@@ -22,10 +22,28 @@
 </div>
 </div>
 <div class="container">
-    My sightings
-    <ul class="list-group text-center">
-     {{#each myResults}}
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">City</th>
+            <th scope="col">State</th>
+            <th scope="col">Shape</th>
+            <th scope="col">Duration</th>
+            <th scope="col">Summary</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each myResults}}
+         <tr>
         {{> sighting}}
-    {{/each}}
-    </ul>
+        </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
