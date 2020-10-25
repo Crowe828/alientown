@@ -125,8 +125,8 @@ img.alienText {
   box-shadow: 0 0 8px 2px;
   border-style: solid;
   border-width: 1px;
-  width: 500px;
-  height: 300px;
+  height:600px;
+  width: 900px;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
@@ -134,39 +134,8 @@ img.alienText {
 }
 /* Set the size of the div element that contains the map */
 #map {
-  height: 300px;
-  width: auto;
-}
-/* Panel that displays all of the info about local tattoo shops */
-#panel {
-  height: 300px;
-  width: null;
-  color: red;
-  background-color: lightgrey;
-  float: left;
-  z-index: 1;
-  overflow-x: hidden;
-  transition: all 0.2s ease-out;
-  font-size: smaller;
-}
-/* Only when the panel is open */
-.open {
-  width: 250px;
-}
-/* Styling for place details */
-.hero {
-  width: 100%;
-  height: auto;
-  max-height: 166px;
-  display: block;
-}
-.place {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  word-wrap: break-word;
-  padding: 15px;
-}
-.details {
-  color: darkslategrey;
+  height:600px;
+  width: 900px;
 }
 
 .row{
