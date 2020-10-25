@@ -9,8 +9,7 @@
                         <div class="tile is-ancestor">
                             <div class="tile is-parent">
                                 <article class="tile is-child notification is-link">
-                                    <p class="title">Your Sightings</p>
-                                    <a class="btn btn-light" href="/reports">reports</a>
+                                    <a href="/mySightings"><p class="title">Your Sightings</p></a>
                                 </article>
                             </div>
                             <div class="tile is-parent tileTwo">
@@ -25,13 +24,14 @@
                             <div class="tile is-parent tileThree">
                                 <article class="tile is-child notification is-link">
                                     <div class="content">
-                                        <p class="title">View Sightings</p>
+                                        <a href="/all"><p class="title">View All Sightings</p></a>
                                         <div class="content">
                                         </div>
                                     </div>
                                 </article>
                             </div>
                         </div>
+                        <button class = "button my-2 btn rounded" onclick="window.location.href='/reports';"> Report a Sighting</button>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
@@ -44,6 +44,11 @@
                     <!-- Google Places info -->
                     <div id="map"></div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div id="timeline"></div>
             </div>
         </div>
 

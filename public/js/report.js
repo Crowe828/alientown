@@ -76,6 +76,7 @@ $(document).ready(() => {
         cityInput.val(data.city);
         stateInput.val(data.state);
         shapeInput.val(data.shape);
+        durationInput.val(data.duration);
         summaryInput.val(data.summary);
         datePosted.val(data.datePosted);
         updating = true;
