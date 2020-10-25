@@ -63,19 +63,61 @@ module.exports = function(app) {
   });
 
   app.get("/all/:shape/:time", (req, res) => {
-    db.Post.findAll({
-      where: {
-        shape: req.params.shape,
-        date: { [Op.endsWith]: req.params.time }
-      }
-    }).then(results => {
-      const myResults = [];
-      for (let i = 0; i < results.length; i++) {
-        myResults.push(results[i].dataValues);
-      }
-      // console.log(myResults);
-      res.render("allSights", { myResults: myResults });
-    });
+    if (req.params.shape === "all-shapes" && req.params.time !== "all-years") {
+      db.Post.findAll({
+        where: {
+          date: { [Op.substring]: req.params.time }
+        }
+      }).then(results => {
+        const myResults = [];
+        for (let i = 0; i < results.length; i++) {
+          myResults.push(results[i].dataValues);
+        }
+        // console.log(myResults);
+        res.render("allSights", { myResults: myResults });
+      });
+    } else if (
+      req.params.shape === "all-shapes" &&
+      req.params.time === "all-years"
+    ) {
+      db.Post.findAll({}).then(results => {
+        const myResults = [];
+        for (let i = 0; i < results.length; i++) {
+          myResults.push(results[i].dataValues);
+        }
+        // console.log(myResults);
+        res.render("allSights", { myResults: myResults });
+      });
+    } else if (
+      req.params.shape !== "all-shapes" &&
+      req.params.time === "all-years"
+    ) {
+      db.Post.findAll({
+        where: {
+          shape: req.params.shape
+        }
+      }).then(results => {
+        const myResults = [];
+        for (let i = 0; i < results.length; i++) {
+          myResults.push(results[i].dataValues);
+        }
+        res.render("allSights", { myResults: myResults });
+      });
+    } else {
+      db.Post.findAll({
+        where: {
+          shape: req.params.shape,
+          date: { [Op.endsWith]: req.params.time }
+        }
+      }).then(results => {
+        const myResults = [];
+        for (let i = 0; i < results.length; i++) {
+          myResults.push(results[i].dataValues);
+        }
+        // console.log(myResults);
+        res.render("allSights", { myResults: myResults });
+      });
+    }
   });
 
   // Here we've add our isAuthenticated middleware to this route.

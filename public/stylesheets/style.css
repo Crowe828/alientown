@@ -9,6 +9,10 @@ html {
   width: 100%;
 }
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .welcome{
   font-size:45px;
   color:whitesmoke;
@@ -169,6 +173,7 @@ img.alienText {
   margin-right: auto;
   margin-left: auto;
 }
+
 
 .button{
   width: 100%;

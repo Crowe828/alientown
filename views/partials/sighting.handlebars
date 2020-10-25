@@ -1,8 +1,22 @@
-<li>
-	
-	{{summary}} <button class="edit-sighting btn btn-sm rounded mx-3" data-id="{{this.id}}">Edit</button>
-    <button class="delete-sighting btn btn-sm rounded mx-3" data-id="{{this.id}}">Delete</button>
-    <br />
-    
-
-</li>
+<td>
+    {{date}}
+</td>
+<td>
+    {{city}}
+</td>
+<td>
+    {{state}}
+</td>
+<td>
+    {{shape}}
+</td>
+<td>
+    {{duration}}
+</td>
+<td>
+    {{summary}}
+</td>
+<td>
+    <button type="button" class="edit-sighting btn btn-sm rounded mx-3 btn-primary" data-id="{{this.id}}">Edit</button>
+    <button type="button" class="delete-sighting btn btn-sm rounded mx-3 btn-danger" data-id="{{this.id}}">Delete</button>
+</td>
