@@ -16,7 +16,7 @@ tr:nth-child(even) {
 .welcome{
   font-size:45px;
   color:whitesmoke;
-  padding-top: 250px;
+  padding-top: 50px;
   padding-bottom: 60px;
   font-family: 'Space Mono', monospace;
   -webkit-text-stroke-width: 2px;
@@ -39,6 +39,15 @@ tr:nth-child(even) {
   position: sticky;
   top: 0;
   margin-left: 20%;
+}
+
+.homeBox {
+  margin-top:10%;
+  margin-left:auto;
+  margin-right:auto;
+  padding-bottom: 5%;
+  width:60%;
+  background-color: rgba(255, 255, 255, 0.103);
 }
 
 @keyframes rotate {
