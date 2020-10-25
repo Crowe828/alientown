@@ -15,14 +15,14 @@ function initMap() {
   // Geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      (position) => {
+      position => {
         pos = {
           lat: position.coords.latitude,
-          lng: position.coords.longitude,
+          lng: position.coords.longitude
         };
         map = new google.maps.Map(document.getElementById("map"), {
           center: pos,
-          zoom: 2,
+          zoom: 2
         });
 
         bounds.extend(pos);
@@ -49,7 +49,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
   pos = { lat: 28.5492, lng: -81.3798 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
-    zoom: 2,
+    zoom: 2
   });
 
   // If there is an error, let the user know
@@ -74,8 +74,6 @@ function getData() {
         // Push every city from every sighting into the array
         cities.push(data[i].city);
       }
-      // Log it to make sure it pushed to the array correctly
-      console.log(cities);
 
       // Loop over all cities and get lat/lon
       for (i = 0; i < cities.length; i++) {

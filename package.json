@@ -19,11 +19,13 @@
     "express": "^4.17.0",
     "express-handlebars": "^5.1.0",
     "express-session": "^1.16.1",
+    "jquery": "^3.5.1",
     "mysql2": "^1.6.5",
     "orm": "^5.0.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6",
+    "vis": "^4.21.0-EOL",
     "vis-timeline": "^7.4.0"
   },
   "devDependencies": {

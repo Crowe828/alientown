@@ -9,6 +9,10 @@ html {
   width: 100%;
 }
 
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
 .welcome{
   font-size:45px;
   color:whitesmoke;
@@ -138,6 +142,25 @@ img.alienText {
   margin-right: auto;
   margin-left: auto;
 }
+
+
+.button{
+  width: 100%;
+  background-color: rgb(153, 0, 255);
+  color: whitesmoke;
+  font-size: 20px;
+  font-family: 'Space Mono', monospace; 
+}
+
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: #a70000; /* Green */
+  color: white;
+}
+
 
 /* .tileGroup {
   margin-left: 500px;

@@ -71,16 +71,6 @@ module.exports = function(app) {
       });
   });
 
-  app.get("/api/posts", (req, res) => {
-    db.Post.findAll({
-      where: {
-        UserId: req.user.id
-      }
-    }).then(dbPost => {
-      res.json(dbPost);
-    });
-  });
-
   // GET route for all of the info within the sightings table
   app.get("/api/all", (req, res) => {
     db.Post.findAll({}).then(dbPost => {
@@ -88,6 +78,7 @@ module.exports = function(app) {
     });
   });
 
+  // getting one post to delete
   app.delete("/api/posts/:id", (req, res) => {
     db.Post.destroy({
       where: {
@@ -98,6 +89,7 @@ module.exports = function(app) {
     });
   });
 
+  // getting post to edit
   app.get("/api/posts/:id", (req, res) => {
     db.Post.findOne({
       where: {
@@ -108,6 +100,7 @@ module.exports = function(app) {
     });
   });
 
+  // update post
   app.put("/api/posts", (req, res) => {
     db.Post.update(req.body, {
       where: {
