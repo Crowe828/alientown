@@ -7,14 +7,8 @@ $(document).ready(() => {
 
   $(".submitFilter").on("click", event => {
     event.preventDefault(event);
-    let shape = $("#shapeChoice").val();
-    let time = $("#timeFrame").val();
-    if ($("#shapeChoice").val() === "") {
-      shape = "all-shapes";
-    }
-    if ($("#timeFrame").val() === "") {
-      time = "all-years";
-    }
+    const shape = $("#shapeChoice").val();
+    const time = $("#timeFrame").val();
     getPosts(shape, time);
   });
 });

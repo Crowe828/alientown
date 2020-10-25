@@ -25,20 +25,21 @@
   <div class="form-group text-center bg-light py-2">
     <label for="shapeChoice">Shape: </label>
     <select id="shapeChoice" name="shapeChoice">
-      <option selected value="">All Shapes</option>
+      <option selected value="all-shapes">All Shapes</option>
       <option value="circle">Circle</option>
       <option value="fireball">Fireball</option>
       <option value="light">Light</option>
     </select>
     <label for="timeFrame">Time Frame: </label>
     <select id="timeFrame" name="timeFrame">
-      <option selected value="">All Years</option>
+      <option selected value="all-years">All Years</option>
       <option value="2020">2020</option>
       <option value="2019">2019</option>
       <option value="2018">2018</option>
       <option value="2017">2017</option>
       <option value="2016">2016</option>
       <option value="2015">2015</option>
+      <option value=["2015", "2014", "2013", "2012"]>arraytest</option>
     </select>
     <button type="submit" class="btn btn-sm btn-primary submitFilter" id="report">Filter</button>
   </div>

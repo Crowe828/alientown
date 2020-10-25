@@ -66,7 +66,7 @@ module.exports = function(app) {
     if (req.params.shape === "all-shapes" && req.params.time !== "all-years") {
       db.Post.findAll({
         where: {
-          date: { [Op.endsWith]: req.params.time }
+          date: { [Op.substring]: req.params.time }
         }
       }).then(results => {
         const myResults = [];
