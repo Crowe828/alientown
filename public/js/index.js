@@ -15,19 +15,20 @@ function initMap() {
   // Geolocation
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
-      position => {
+      (position) => {
         pos = {
           lat: position.coords.latitude,
-          lng: position.coords.longitude
+          lng: position.coords.longitude,
         };
         map = new google.maps.Map(document.getElementById("map"), {
           center: pos,
-          zoom: 2
+          zoom: 2,
         });
 
         bounds.extend(pos);
         infoWindow.setPosition(pos);
-        infoWindow.setContent("YOU ARE HERE");
+        // Let the user know we found their location
+        infoWindow.setContent("Earthling Located");
         infoWindow.open(map);
         map.setCenter(pos);
       },
@@ -48,7 +49,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
   pos = { lat: 28.5492, lng: -81.3798 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
-    zoom: 2
+    zoom: 2,
   });
 
   // If there is an error, let the user know
@@ -61,9 +62,6 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
 
   infoWindow.open(map);
   currentInfoWindow = infoWindow;
-
-  // Display places in Orlando, Florida
-  getNearbyPlaces(pos);
 }
 
 // Pull all of the info from the database
@@ -80,7 +78,7 @@ function getData() {
       console.log(cities);
 
       // Loop over all cities and get lat/lon
-      for (let i = 0; i < cities.length; i++) {
+      for (i = 0; i < cities.length; i++) {
         // Use geocoder to get cities' lat/lon
         const geocoder = new google.maps.Geocoder();
         const address = cities[i];
@@ -97,8 +95,13 @@ function getData() {
               console.log("lat: " + lat, "lng: " + lng);
               // Create a marker for each set of coordinates
               new google.maps.Marker({
-                position: { lat: lat, lng: lng },
+                position: {
+                  lat: lat,
+                  lng: lng
+                },
                 map,
+                // Custom flying saucer icon for the markers
+                icon: (src = "../images/alien-icon.png"),
                 title: "ALIENS!"
               });
             }
