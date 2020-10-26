@@ -26,7 +26,6 @@ tr:nth-child(even) {
 .ufoPic {
   /* The image used */
   background-image: url("../images/ufo.jpg");
-
   /* Full height */
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -148,6 +147,15 @@ img.alienText {
 .tile {
   font-family: 'Space Mono', monospace;
 }
+
+.links{
+   margin-top:50%;
+ }
+
+ .myTitles{
+   font-size: 30px;
+   font-weight: bold;
+ }
 
 .button{
   width: 100%;
