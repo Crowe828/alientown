@@ -50,7 +50,7 @@ module.exports = function(app) {
   app.get("/all", (req, res) => {
     // If the user already has an account
     if (req.user) {
-      db.Post.findAll({}).then(results => {
+      db.Post.findAll({ limit: 25 }).then(results => {
         const myResults = [];
         for (let i = 0; i < results.length; i++) {
           myResults.push(results[i].dataValues);
@@ -67,7 +67,8 @@ module.exports = function(app) {
       db.Post.findAll({
         where: {
           date: { [Op.substring]: req.params.time }
-        }
+        },
+        limit: 25
       }).then(results => {
         const myResults = [];
         for (let i = 0; i < results.length; i++) {
@@ -80,7 +81,7 @@ module.exports = function(app) {
       req.params.shape === "all-shapes" &&
       req.params.time === "all-years"
     ) {
-      db.Post.findAll({}).then(results => {
+      db.Post.findAll({ limit: 25 }).then(results => {
         const myResults = [];
         for (let i = 0; i < results.length; i++) {
           myResults.push(results[i].dataValues);
@@ -95,7 +96,8 @@ module.exports = function(app) {
       db.Post.findAll({
         where: {
           shape: req.params.shape
-        }
+        },
+        limit: 25
       }).then(results => {
         const myResults = [];
         for (let i = 0; i < results.length; i++) {
@@ -108,7 +110,8 @@ module.exports = function(app) {
         where: {
           shape: req.params.shape,
           date: { [Op.endsWith]: req.params.time }
-        }
+        },
+        limit: 25
       }).then(results => {
         const myResults = [];
         for (let i = 0; i < results.length; i++) {
