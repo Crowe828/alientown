@@ -22,7 +22,7 @@ function initMap() {
         };
         map = new google.maps.Map(document.getElementById("map"), {
           center: pos,
-          zoom: 2
+          zoom: 3
         });
 
         bounds.extend(pos);
@@ -49,7 +49,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
   pos = { lat: 28.5492, lng: -81.3798 };
   map = new google.maps.Map(document.getElementById("map"), {
     center: pos,
-    zoom: 2
+    zoom: 3
   });
 
   // If there is an error, let the user know
