@@ -147,6 +147,11 @@ img.alienText {
   margin-top:50%;
 }
 
+.myTitles{
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .button{
   width: 100%;
   background-color: rgb(153, 0, 255);
