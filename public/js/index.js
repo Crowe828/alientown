@@ -97,7 +97,7 @@ function getData() {
                 },
                 map,
                 // Custom flying saucer icon for the markers
-                icon: (src = "../images/alien-icon.png"),
+                icon: "images/alien-icon.png",
                 title: "ALIENS!"
               });
             }
