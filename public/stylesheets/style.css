@@ -35,10 +35,8 @@ tr:nth-child(even) {
 }
 
 .alienText {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  margin-left: 20%;
+  height: auto;
+  max-width: 100%;
 }
 
 .homeBox {
@@ -74,12 +72,10 @@ img.alienText {
   /* Adjust animation duration to change the element’s speed */
   animation: fly 50s linear infinite;
   pointer-events: none !important;
-  top: 0;
-  left: 0;
+  top: 30px;
   transform: translateX(-120%) translateY(-120%) rotateZ(0);
-  position: fixed;
+  position: absolute;
   animation-delay: 1s;
-  z-index: 999999;
 }
 
 /* Keyframe values control where the element will begin
@@ -128,54 +124,20 @@ img.alienText {
   }
 }
 
-/* Google Maps API from here on down */
 .google-maps {
-  border: white;
-  box-shadow: 0 0 8px 2px;
+  border: greenyellow;
   border-style: solid;
-  border-width: 1px;
-  width: 500px;
-  height: 300px;
+  border-width: 5px;
+  height: 600px;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 75px;
+  margin-bottom: 60px;
 }
-/* Set the size of the div element that contains the map */
+
 #map {
-  height: 300px;
-  width: auto;
-}
-/* Panel that displays all of the info about local tattoo shops */
-#panel {
-  height: 300px;
-  width: null;
-  color: red;
-  background-color: lightgrey;
-  float: left;
-  z-index: 1;
-  overflow-x: hidden;
-  transition: all 0.2s ease-out;
-  font-size: smaller;
-}
-/* Only when the panel is open */
-.open {
-  width: 250px;
-}
-/* Styling for place details */
-.hero {
+  height: 100%;
   width: 100%;
-  height: auto;
-  max-height: 166px;
-  display: block;
-}
-.place {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  word-wrap: break-word;
-  padding: 15px;
-}
-.details {
-  color: darkslategrey;
 }
 
 .row{
@@ -183,6 +145,9 @@ img.alienText {
   margin-left: auto;
 }
 
+.tile {
+  font-family: 'Space Mono', monospace;
+}
 
 .button{
   width: 100%;
@@ -197,27 +162,13 @@ img.alienText {
 }
 
 .button:hover {
-  background-color: #a70000; /* Green */
+  background-color: #a70000;
   color: white;
 }
 
-
-/* .tileGroup {
-  margin-left: 500px;
-  margin-right: 500px;
-  
-} */
 
 .title {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
   text-align: center;
 }
-
-/* .center {
-  background-color: black;
-} */
-/* 
-.asdf {
-  background-color: black;
-} */
