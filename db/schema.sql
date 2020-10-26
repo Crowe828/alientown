@@ -1,18 +1,26 @@
 CREATE DATABASE IF NOT EXISTS alien_db;
 USE alien_db;
--- If the table already exists, remove it before trying to create the table again
-DROP TABLE IF EXISTS sightings;
--- Create the sightings table
--- Date / Time,City,State,Shape,Duration,Summary,Posted
-CREATE TABLE sightings (
-    id int NOT NULL AUTO_INCREMENT,
-    date_and_time varchar(255) NOT NULL,
+DROP TABLE IF EXISTS Posts;
+CREATE TABLE Posts (
+    id int AUTO_INCREMENT NOT NULL,
+    date varchar(255),
     city varchar(255),
     state varchar(255),
-    shape varchar(255) NOT NULL,
+    shape varchar(255),
     duration varchar(255),
-    summary varchar(255),
-    posted varchar(255) NOT NULL,
+    summary TEXT,
+    datePosted varchar(255),
+    createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY (id)
+);
+
+
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users (
+    id int AUTO_INCREMENT NOT NULL,
+    email varchar(255) NOT NULL,
+    password varchar(255) NOT NULL,
+    createdAt TIMESTAMP NOT NULL,
     PRIMARY KEY (id)
 );
 
