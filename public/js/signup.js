@@ -37,7 +37,8 @@ $(document).ready(() => {
 
   function handleLoginErr(err) {
     if (err) {
-      $("#alert .msg").text("Sorry, this email is already in use!");
+      console.log(err);
+      $("#alert .msg").text("There's an error");
       $("#alert").fadeIn(500);
     }
   }
