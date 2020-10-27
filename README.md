@@ -2,8 +2,9 @@
   
 
   ![GitHub repo size](https://img.shields.io/github/repo-size/Crowe828/alientown) ![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)
-
-
+#
+#### Use the deployed app: http://mega-awesome.herokuapp.com/
+# 
 
 
 ## Description 
